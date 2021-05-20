@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="TraitorBot">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TraitorBot.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

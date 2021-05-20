@@ -5,6 +5,10 @@ import time
 import asyncio
 import TraitorMath
 import TraitorConfigs
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 
 client = discord.Client()
 @client.event
@@ -20,49 +24,38 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-   # elif message.content.startswith('!client'):
-    #    From dotenv import load_dotenv
-    #    load_dotenv()
-  #      token - 
-    #    return
+
     elif message.content.startswith('!help'):
-        await message.channel.send('Currently available commands: \n!gamestart - Assigns 0, 1 or more traitors and '
-                                   'antagonists from all players in your voicechannel based on game settings. '
-                                   '\n!gamestop - clears current traitor(s).\n!SetTraitorChance50 - replace 50 with '
-                                   'any number (0-100) for a percent chance of traitor this round. \n!role - Opens '
-                                   'the role assignment chat.  React to the message to choose a role.\n!clearrole - '
-                                   'removes your in-game roles, including "New"\n!reroll - If you are Traitor, '
-                                   'or Antagonist, and need a new mission, this command will randomly pick a new one. '
-                                   ' Should be used in the Traitor/Antag channel to avoid giving yourself away.  '
-                                   'Please do not overuse this command, there are not many missions at this point.')
+        await message.channel.send('Currently available commands: \n!gamestart - Assigns traitor and '
+                                   'antagonist missions to players in your voicechannel based on game settings. '
+                                   '\n!gamestop - clears all current traitor(s).\n!SetTraitorChance50 - replace 50 with '
+                                   'any number (0-100) to set percent chance of traitor this round. This chance is rolled n times when n is the maximum traitor setting.\n!role - Opens '
+                                   'the role assignment chat.  React to the message to remove your previous role and set a new role.\n!SetMaxTraitors2 - determines the maximum number of possible traitors (in that example, 2)\nComing soon - set max/chance of antagonists')
         return
     elif message.content.startswith('!SetTraitorChance'):
-        traitorchance = message.content[17:]
-        #if traitorchance is integer 2 or 3 digits
-        #with open('Config.json') as configfile:
-            #MissionFile = json.load(configfile)
-        #
-        
+
+        await message.channel.send(TraitorConfigs.ChangeMaxTraitor(message))
+
         return
     elif message.content.startswith('!SetMaxTraitors'):
-        print(TraitorConfigs.ChangeMaxTraitor(message))
+        await message.channel.send(TraitorConfigs.ChangeMaxTraitor(message))
         return
     elif message.content.startswith('!SetMaxAntags'):
         maxantag = message.content[13:]
+        await message.channel.send(TraitorConfigs.ChangeMaxTraitor(message))
         return        
-        
+
     elif message.content.startswith('!role'):
         Bserver = message.guild
         message1 = await message.channel.send('React to this message in the next 30 seconds to set your role:')
-        # \nDoctor :morphine: \n Security :baton: \n Captain :cap:\nEngineer :Screwdriver:\nMechanic :wrench~1:\nAssistant :Ethanol:
         with open('Config.json') as configjson:
             Config = json.load(configjson)
         settingsroles = Config['Settings']['AvailableRoles']
         emojis = []
         for rolename in settingsroles:
-            emoji1 = discord.utils.get(Bserver.emojis, name=rolename)
-            emojis.append(emoji1)
-            await message.channel.send(rolename + ' = ' + (str(emoji1)))
+            rolemoji = discord.utils.get(Bserver.emojis, name=rolename)
+            emojis.append(rolemoji)
+            await message.channel.send(rolename + ' = ' + (str(rolemoji)))
         for emoji in emojis:
             await message1.add_reaction(emoji)
             #await message.channel.send(str(emoji))
@@ -71,8 +64,6 @@ async def on_message(message):
             return user != client.user
         #Run for 30 seconds and then break.
         stoptime = time.time() + 30
-        print(stoptime)
-        print(time.time())
         while stoptime>time.time():
             try:
                 reaction, user = await client.wait_for('reaction_add', timeout=35.0, check=check)
@@ -96,10 +87,24 @@ async def on_message(message):
             Radio = message.author.voice.channel
         except AttributeError:
             await message.channel.send('Error: You (and other players) must be in the same voice channel to start the game.')
+            return
         if len(Radio.members) < 2:
             await message.channel.send('Error: Looks like there are not enough players.  At least 2 players must be present in the voice channel.')
-            #return
-        await message.channel.send('Welcome to the game!  Now distributing insanity')
+            return
+        Roll = random.randint(0, 119)
+        if Roll < 12:
+            await message.channel.send('Welcome to the game!  Now distributing insanity')
+        elif Roll < 24:
+            await message.channel.send('Welcome to the game!  Now distributing madness')
+        elif Roll < 36:
+            await message.channel.send('Welcome to the game!  Now distributing maliciousness')
+        elif Roll < 55:
+            await message.channel.send('Welcome to the game!  Now distributing ill intent')
+        elif Roll < 80:
+            await message.channel.send('Welcome to the game!  Now distributing nefarious intentions')
+        elif Roll < 120:
+            await message.channel.send('Welcome to the game!  Now distributing secret missions')
+
         Bserver = message.guild
         Traitor, Antagonist = TraitorMath.CalculatePlayerRoles(Radio)
         word1, word2, word3 = TraitorMath.ChooseCodewords()
@@ -111,8 +116,11 @@ async def on_message(message):
         CodewordChance = Config['Settings']['CodewordChance']
         if (len(Traitor) >= 2):
             Roll = random.randint(0, 99)
+            if (len(Traitor)>=3):
+                Roll = Roll - (4*len(Traitor))
             if Roll < CodewordChance:
                 setCodewordsTraitors = True
+
         if (len(Traitor) >= 1) and (len(Antagonist) >= 1) and not setCodewordsTraitors:
             Roll = random.randint(0, 99)
             if Roll < CodewordChance:
@@ -164,7 +172,7 @@ async def on_message(message):
                     Spycoms = Bserver.create_text_channel('spy-' + '1')
                     Spycoms.set_permissions(Bserver.default_role, read_messages=False, send_messages=False)
                     Spycoms.set_permissions(spy, read_messages=True, send_messages=True)
-                    Spycoms.send('You have received a report that there are at least two traitors on board that will be trying to identify eachother with codewords.  Below is one of the words they will be using.  Make sure they face justice for their crimes but you CANNOT reveal your information or identity as a spy to the other crew.')
+                    Spycoms.send('You have received a report that there are at least two traitors on board that will be trying to identify eachother with codewords.  Below is one of the words they will be using.  Make sure they face justice for their crimes but you cannot reveal your information or identity as a spy to the other crew.')
                     Spycoms.send('Codeword = ' + word2)
       
     elif message.content.startswith('!gamestop'):
@@ -207,5 +215,5 @@ async def on_message(message):
 def BotMessage(m):
     return m.author == client.user
 
-
-client.run('NzA2OTg0NTE0NTY3NjY3ODMy.XrCMow.ZIc5SyfUL2ZrIG7SLXi9p28xOgA')
+token = os.environ['DISCORD_TOKEN']
+client.run(token)

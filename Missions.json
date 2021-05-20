@@ -27,14 +27,14 @@
 	  "Any":
 	  ["You have finally been given a mission by the Renegade Command!  There is another sleeper agent in the crew - you can recognize eachother with the below 3 code words.  Once you find your partner, your mission is to  take over the ship by killing the captain and any security.  If they have a different mission, assist them as well.",
 	  "You have finally been given a mission by the Renegade Command!  There is another sleeper agent in the crew - you can recognize eachother with the below 3 code words.  Once you find your partner, your mission is to  take over the ship by killing the captain and any security.  If they have a different mission, assist them as well.",
-	  "You have finally been given a mission by the Renegade Command!  There is another sleeper agent in the crew - you can recognize eachother with the below 3 code words.  Once you find your partner, double cross them and eliminate them to prove your loyalty."]
+	  "You have finally been given a mission by the Renegade Command!  There is another sleeper agent in the crew - you can recognize eachother with the below 3 code words.  Once you find your partner, double cross them and eliminate them to prove your loyalty. You CANNOT reveal your identity to the rest of the crew."]
   },
 
   "CodewordsAntag": {
 	  "Any":
 	  ["You have finally been given a mission by the Renegade Command!  There is another sleeper agent in the crew - you can recognize eachother with the below 3 code words.  Once you find your partner, your mission is to  take over the ship by killing the captain and any security.  If they have a different mission, assist them as well.",
 	  "You have finally been given a mission by the Renegade Command!  There is another sleeper agent in the crew - you can recognize eachother with the below 3 code words.  Once you find your partner, your mission is to  take over the ship by killing the captain and any security.  If they have a different mission, assist them as well.",
-	  "You have finally been given a mission by the Renegade Command!  There is another sleeper agent in the crew - you can recognize eachother with the below 3 code words.  Once you find your partner, work with them to eliminate them to prove your loyalty."]
+	  "You have finally been given a mission by the Renegade Command!  There is another sleeper agent in the crew - you can recognize eachother with the below 3 code words.  Once you find your partner, double cross them and eliminate them to prove your loyalty. You CANNOT reveal your identity to the rest of the crew."]
   },
 
 "AntagMissions": {
