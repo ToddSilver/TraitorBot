@@ -1,0 +1,69 @@
+{
+  "TraitorMissions": {
+	"Captain": 
+	["The gambling debts have added up and the collectors are on you... but you've got an insurance fraud scheme worked out for the next outpost!  You just have to get rid of the rest of the crew and reregister the ship to collect the payout.  To win, you must be the only one on the sub to make it to the outpost. Don't abandon the crew too early and then die!!  Bonus points if crew are still alive somewhere.",
+	"You've become excessively paranoid.  You hear whispers of mutiny in the vents... This never ends well for the captain.  You've got to strike first!  Kill all the probably traitorous security officers to make sure you are the only one armed.  If there aren't any security, kill the first person you know is armed or asks for a gun.  Make sure to hoard ALL the weapons on your person to insure your safety!"],
+	"Security": 
+	["Those damn nerds keep making fun of you.  We'll see who's illiterate now...  Prove once and for all that you don't need them by killing all engineers and surviving the mission.", 
+	"No one can run this ship better then you.  You're the best!  Make sure that useless captain has an... unfortunate Accident.  Become the new captain.  You must kill anyone who protests the natural order of things.  Loyalty is the most important requirement of a good crew, after all."],
+	"Engineer": 
+	["You have developed a terrible temper.  If anyone complains about how you do your job or tells you to manage the reactor, you snap. Kill that person for the insult and wasting time. If this doesn't happen ~halfway through the round, start experimenting with reactor settings while muttering obsessively.  Maybe try wiring the Command terminal Velocity X output to the reactor fission level. That way, if the captain needs more power they can just go faster!", 
+	"Those greasy mechanics keep losing your tools and won't help with the junction boxes... time to teach them a lesson.  Rewire the ballast tanks to flood when no one's looking.  Kill the first person who tries to fix it.  (You want to send a signal of 100 or more to the pumps.  Simplest way is to place a memory component, type in 100, and wire it to the pumps 'Set_Speed'.  If you can't find a component, in a pinch you can wire the Reactor's 'Temperature_out' (or anything that sends a number signal) to the pump setspeed.)'"],	
+	"Doctor": 
+	["You just can't stand a certain fellow crewmate.  Who do they think they are, interrupting your research?! Murder the first person who needs treatment.  If the round is halfway through and you havent killed anyone, conduct an experiment on someone(inject them with whatever's handy).  You'll probably need to treat them afterward...",
+	"Got a job from the bigshoes, after this you can finally retire.  The crew needs their... immunizations.  Start a Husk infection (Inject crew with Calyx eggs). If needed, purchase from outpost(ONLY ONE), deconstruct Calyxanide for eggs, or take from dead husks.  Other doctors are a good place to start."],	
+	"Mechanic": 
+	["You are tired of being bossed around... those damn command personnel need to pay!  Murder the first person that tells you to fix something. If this doesn't happen halfway through the round, stop fixing things.  If it still doesn't happen, murder whoever is stealing your job by fixing things.",
+	"You've just thought of a hilarious prank!  Replace all oxygen in diving masks/suits with welding fuel, and if you have time fill welders with oxygen.  It's only funny if your sabotage kills someone, try to make that happen."],
+	"Multi":
+	["How are you supposed to climb the ladder and get a raise when there is just so much fucking competition??  Kill your coworkers. \n (End the round as the only surviving member of your role)"],
+	"Any": 
+	["You've received your orders from the Coalition command.  {} must be eliminated, they may be a Renegade spy.  Take the target's ID (or stash it) as proof.",
+	"Things are getting so boring around here and you need to pad your resume.  It's time for a career change!  Find the person who seems to like their job the most.  Kill them, take their clothes and start doing their job.  Optionally if it fits your mood, you can also wear their ID tag, demand to be called by their name and do an impression of them over the radio. (If no one likes their job, pick whichever job you want to do and kill someone with that role.)",
+	"You've been chosen by the honkmother.  Find your clown suit, it doesn't matter if you live or die.  The methods of destruction and chaos are up to you, bring the Mirth. If you survive, bring the vessel to the nearest port. bonus points for dark humor, gruesome murders, and scaring any crew."]	
+  },
+  
+  "CodewordsTraitor": {
+	  "Any":
+	  ["You have finally been given a mission by the Renegade Command!  There is another sleeper agent in the crew - you can recognize eachother with the below 3 code words.  Once you find your partner, your mission is to  take over the ship by killing the captain and any security.  If they have a different mission, assist them as well.",
+	  "You have finally been given a mission by the Renegade Command!  There is another sleeper agent in the crew - you can recognize eachother with the below 3 code words.  Once you find your partner, your mission is to  take over the ship by killing the captain and any security.  If they have a different mission, assist them as well.",
+	  "You have finally been given a mission by the Renegade Command!  There is another sleeper agent in the crew - you can recognize eachother with the below 3 code words.  Once you find your partner, double cross them and eliminate them to prove your loyalty."]
+  },
+
+  "CodewordsAntag": {
+	  "Any":
+	  ["You have finally been given a mission by the Renegade Command!  There is another sleeper agent in the crew - you can recognize eachother with the below 3 code words.  Once you find your partner, your mission is to  take over the ship by killing the captain and any security.  If they have a different mission, assist them as well.",
+	  "You have finally been given a mission by the Renegade Command!  There is another sleeper agent in the crew - you can recognize eachother with the below 3 code words.  Once you find your partner, your mission is to  take over the ship by killing the captain and any security.  If they have a different mission, assist them as well.",
+	  "You have finally been given a mission by the Renegade Command!  There is another sleeper agent in the crew - you can recognize eachother with the below 3 code words.  Once you find your partner, work with them to eliminate them to prove your loyalty."]
+  },
+
+"AntagMissions": {
+	"Captain": 
+	["You are an idealist and truly want the best for the crew, make sure all their needs are met.  The entire crew must survive.  If anyone does die, hold a funeral, make sure to give a eulogy.  Give a speech that's way too long and make it about you, or whatever else feels right.  Return to the last outpost to return the body.",
+	"Complete the mission never one touching the command console, or fixing anything.  Setting autopilot once is ok, but better if you get someone else to do it.  Delegation is important to a lazy captain.",
+	"Renegades are tracking you through the Crew's radio frequencies!  Confiscate ALL headsets and win the round using only regular human mouth talking."],
+	"Security": 
+	["Discipline is too lax on this sub... Make sure the crew knows your authority.  Find or invent a reason to beat each of them at least once (But preferably a few times).  Don't beat the captain, and try not to kill crew unless they deserve it.  If someone gets uppity, stack stun batons hits on them so they are stunned for a long time.",
+	"Your last security team scarred you with their unnecessary cruelty, and you are now a total pacifist.  Be as polite and understanding as possible, and never attack another living creature.  Exceptions can be made only under BOTH extreme pressure AND direct orders.",
+	"You are secretly a renegade spy! Don't blow your cover by sinking the ship or killing anyone.  Don't bother arresting traitors, and steal paperwork for other agents.  Get a bonus for every ID card other then your own that you manage to end the round with."], 	
+	"Engineer": 
+	["Make a button/switch the crew reaaally shouldn't press.  Bonus point if you tell them and they press it anyway.  You can't be the one to press the button unless ordered by the captain.  (Ideas if you need them - a detonator with c4 under the captain's station.  Make a switch, wire it to both airlock doors, and any nearby doors (forcing them all open will flood the ship). Create a button to lock the controls to full speed ahead by forcing a signal of 100 to the engine.", 
+	"Cause at least one explosion on the sub.  Preferably via detonator, but it can be grenade or oxygen tank in a pinch.  To count, needs to actually damage someone or something at an important time.  Try not to get blamed!",
+	"You are in a tinkering mood... things can be improved around here!  Jury rig something with wiring, whether it is efficient or not. Finish the mission with your system. The crazier and more creative, the more points!  Note: If you don't finish your project and things are only half working, great! (Some ideas for you: Rewiring all power through a single junction box and relay components. A system to save power by turning off O2 half the time, or until oxygen quality is low. Controlling the engine or ballast with a Terminal instead of the helm."],	
+	"Doctor": 
+	["You are fresh out of fake medical school and eager to learn from your future mistakes. Make sure you treat every crew at least once and be pushy about it.  Try to give the crew stabilizine, antibiotics, or antidotes as booster shots, just in case.  Med school 101, you gotta make sure they need you, even if you're the reason they get hurt.",
+	"Mask your crippling opiate addiction to the crew.  Related, try to never give opiates to anyone but yourself.  Bonus points if you let someone die from this.",
+	"Make yourself... Indispensable.  End the mission with every other character having an opiate addiction.  The higher the better.  Do whatever you can to increase your supply.",
+	"You are secretly a Deacon of the Church of the Husk.  Spread the good word if you like, but most importantly you must maintain an active husk infection on yourself at least half of the round and survive. Try not to let others find out, they may get jealous."],	
+	"Mechanic": 
+	["The Doors are angry with you, but they can only speak when opening/closing.  You must silence them.  Weld shut every door you can, as long as no one is looking and you can get away with it.",
+	"You've started hearing about automation taking your job and are getting very nervous.  You'd better make sure no robots can fix anything - hoard all welding torches, wrenches and screwdrivers you can possibly find so you are the only one fixing things.  Hide them either on you or stashed somewhere.  Double Bonus points if you steal other people's tools.",
+	"You've been treated cruelly for too long.  Demand pay, form a strike/slowdown as needed to get what you want (ethanol, batons, flares, captains hats, whatever you think is fair). You may optionally share this goal with other peons and they also score if you collectively succeed."],
+	"Multi":
+	["How are you supposed to climb the ladder and get a raise when there is just so much competition??  Screw that, time to get high and let your coworkers do the work for you! \n (inject yourself with Deliriumine)"],
+	"Any": 
+	["Your partner left you, the debt is catching up and the sub is out of reconstituted peach cobbler.  Drink at least 5 entire bottles of ethanol during the mission without dying. You may ignore orders to go swimming for more yeast to ferment if needed.",
+	"Find a clown costume.  You are a nice clown! Is it someone's  birthday?? \n Don't kill anyone unless they are bad, and try to entertain the crew.  It doesn't matter if you live or die - if the crew found your antics amusing or scary, you score full points.  Follow your instincts, praise the Honkmother.",
+	"You have a kleptomania problem coming on. If this is a cargo mission, steal all of the supplies.  Otherwise, end the mission with the most valuable things you can in your inventory or stashed away. Make sure your hoarding inconveniences other crew if possible.  Double Bonus points if you manage to take things directly from someone else's inventory."]
+  }
+}

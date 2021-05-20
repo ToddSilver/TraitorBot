@@ -1,0 +1,11 @@
+{
+  "Settings": {
+	"TraitorChance": 98,
+	"MaxTraitor": 1,
+	"AntagChance": 98,
+	"MaxAntag": 1,
+	"CodewordChance": 50,
+	"ExtraAntagifNoTraitor": "True",
+	"AvailableRoles": ["Captain", "Security", "Doctor", "Engineer", "Mechanic", "Assistant"]
+  }
+}
