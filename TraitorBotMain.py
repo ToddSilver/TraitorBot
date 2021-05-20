@@ -32,18 +32,11 @@ async def on_message(message):
                                    'any number (0-100) to set percent chance of traitor this round. This chance is rolled n times when n is the maximum traitor setting.\n!role - Opens '
                                    'the role assignment chat.  React to the message to remove your previous role and set a new role.\n!SetMaxTraitors2 - determines the maximum number of possible traitors (in that example, 2)\nComing soon - set max/chance of antagonists')
         return
-    elif message.content.startswith('!SetTraitorChance'):
 
-        await message.channel.send(TraitorConfigs.ChangeMaxTraitor(message))
+    elif message.content.startswith('!ChangeSetting'):
+        await message.channel.send(TraitorConfigs.ChangeSetting(message.content))
+        return
 
-        return
-    elif message.content.startswith('!SetMaxTraitors'):
-        await message.channel.send(TraitorConfigs.ChangeMaxTraitor(message))
-        return
-    elif message.content.startswith('!SetMaxAntags'):
-        maxantag = message.content[13:]
-        await message.channel.send(TraitorConfigs.ChangeMaxTraitor(message))
-        return        
 
     elif message.content.startswith('!role'):
         Bserver = message.guild
