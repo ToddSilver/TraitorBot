@@ -2,9 +2,14 @@ import json
 
 
 
-def ViewSetting(message):
-
-    return
+def ViewSetting():
+    configjson = open('Config.json', 'r')
+    Config = json.load(configjson)
+    doctext = ""
+    for docLine in Config['Documentation']:
+        doctext = doctext + '\n\n' + docLine + ' = ' + str(Config['Settings'][docLine]) + '.  ' + Config['Documentation'][docLine]
+        #Look into using join here instead
+    return doctext
 
 def ChangeSetting(message):
 

@@ -1,1 +1,27 @@
-{"Settings": {"TraitorChance": "97", "MaxTraitor": "3", "AntagChance": 95, "MaxAntag": 1, "ExtraAntagifNoTraitor": "True", "AvailableRoles": ["Captain", "Security", "Doctor", "Engineer", "Mechanic", "Assistant"], "CodewordChance": 40}}
+{
+	"Settings": {
+		"TraitorChance": 97,
+		"MaxTraitor": 2,
+		"AntagonistChance": 97,
+		"MaxAntagonist": 1,
+		"ExtraAntagifNoTraitor": 1,
+		"AvailableRoles": [
+			"Captain",
+			"Security",
+			"Doctor",
+			"Engineer",
+			"Mechanic",
+			"Assistant"
+		],
+		"CodewordChance": 40
+	},
+	"Documentation": {
+		"TraitorChance": "The % Chance that someone will be assigned a traitor mission this round, 0-100.",
+		"MaxTraitor": "The number of times a traitor chance is rolled.  For example, if the TraitorChance is 100, and the MaxTraitor value is 3, there will be 3 traitors guaranteed.",
+		"AntagonistChance": "The % Chance that someone will be assigned a minor antagonist mission this round, 0-100.",
+		"MaxAntagonist": "The number of times a minor antagonist chance is rolled.  for example, if the AntagChance is 33, and the MaxAntagonist value is 3, there will be on average 1 antagonist, but theoretically between 0 and 3.",
+		"ExtraAntagifNoTraitor": "If this value is 0, no effect.  If it is 1, then anytime a Traitor is NOT generated (The TraitorChance roll fails), an extra antagonist is added to the round.  Note that the extra antagonist also rolls based on the AntagChance setting.",
+		"AvailableRoles": "List of active roles",
+		"CodewordChance": "[Feature in Progress]"
+	}
+}
