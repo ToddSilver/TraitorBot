@@ -5,10 +5,11 @@ import json
 def CalculatePlayerRoles(Radio):
     with open('Config.json') as configjson:
         Config = json.load(configjson)
-    maxantag = Config['Settings']['MaxAntag']
+    maxantag = Config['Settings']['MaxAntagonist']
     maxtraitor = Config['Settings']['MaxTraitor']
     TraitorChance = Config['Settings']['TraitorChance']
-    AntagChance = Config['Settings']['AntagChance']
+    AntagonistChance = Config['Settings']['AntagonistChance']
+    ExtraAntagifNoTraitor = Config['Settings']['ExtraAntagifNoTraitor']
     Traitor = []
     Antagonist = []
     for i in range (0, maxtraitor):
@@ -19,11 +20,12 @@ def CalculatePlayerRoles(Radio):
                 Traitor.append(Traitor1)
                 count = str(i)
         else:
-            print('bonus_antagonist')
-            maxantag = 1+maxantag
+            if ExtraAntagifNoTraitor == 1:
+                print('bonus_antagonist')
+                maxantag = 1+maxantag
 
     for i in range (0, maxantag):
-        IsAntag = MissionChance(AntagChance)
+        IsAntag = MissionChance(AntagonistChance)
         if IsAntag:
             Antagonist1 = ChooseAntagonist(Radio, Traitor, Antagonist)
             if Antagonist1 == "Not enough Crew":

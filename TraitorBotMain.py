@@ -26,24 +26,23 @@ async def on_message(message):
         return
 
     elif message.content.startswith('!help'):
-        await message.channel.send('Currently available commands: \n!gamestart - Assigns traitor and '
-                                   'antagonist missions to players in your voicechannel based on game settings. '
-                                   '\n!gamestop - clears all current traitor(s).\n!SetTraitorChance50 - replace 50 with '
-                                   'any number (0-100) to set percent chance of traitor this round. This chance is rolled n times when n is the maximum traitor setting.\n!role - Opens '
-                                   'the role assignment chat.  React to the message to remove your previous role and set a new role.\n!SetMaxTraitors2 - determines the maximum number of possible traitors (in that example, 2)\nComing soon - set max/chance of antagonists')
+        await message.channel.send(
+            "Currently available commands: \n\n!gamestart - Assigns traitor and antagonist missions to players in your "
+            "voicechannel.  The number of missions assigned is based on game settings.  It is recommended that you "
+            "set your role first! \n\n!role - The bot will send a role assignment message.  React to the message to "
+            "remove any previous roles and set a new role.\n\n!gamestop - clears all current traitors. (Might add a "
+            "function to keep score of accomplished missions here later)\n\n!ChangeSetting_[Setting]_[NewValue] - "
+            "Change any of the game settings.  Use !ViewSettings for a list and explanation of the settings.  "
+            "Example: !ChangeSetting_TraitorChance_50\n\n!ViewSettings - View all current game settings and roles.")
         return
-    elif message.content.startswith('!SetTraitorChance'):
 
-        await message.channel.send(TraitorConfigs.ChangeMaxTraitor(message))
+    elif message.content.startswith('!ChangeSetting'):
+        await message.channel.send(TraitorConfigs.ChangeSetting(message.content))
+        return
 
+    elif message.content.startswith('!ViewSettings'):
+        await message.channel.send(TraitorConfigs.ViewSetting())
         return
-    elif message.content.startswith('!SetMaxTraitors'):
-        await message.channel.send(TraitorConfigs.ChangeMaxTraitor(message))
-        return
-    elif message.content.startswith('!SetMaxAntags'):
-        maxantag = message.content[13:]
-        await message.channel.send(TraitorConfigs.ChangeMaxTraitor(message))
-        return        
 
     elif message.content.startswith('!role'):
         Bserver = message.guild
@@ -208,9 +207,18 @@ async def on_message(message):
         else:
             await Channel.send('Sorry it broke tell Todd \n Error code:didnt finish this part #12')
             return
+
+
+    elif message.content.startswith('!JoinCrew'):
+        newRole = discord.utils.get(message.guild.roles, name='Crew')
+        await message.author.add_roles(newRole)
+        await message.channel.send('Welcome to the crew, {}'.format(message.author.mention))
+        return
+
     else:
         if message.content.startswith('!'):
             await message.channel.send('Unknown Command.  Type !help for commands.')
+
 
 def BotMessage(m):
     return m.author == client.user
