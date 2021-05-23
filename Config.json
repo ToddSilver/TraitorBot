@@ -19,8 +19,8 @@
 		"TraitorChance": "The % Chance that someone will be assigned a traitor mission this round, 0-100.",
 		"MaxTraitor": "The number of times a traitor chance is rolled.  For example, if the TraitorChance is 100, and the MaxTraitor value is 3, there will be 3 traitors guaranteed.",
 		"AntagonistChance": "The % Chance that someone will be assigned a minor antagonist mission this round, 0-100.",
-		"MaxAntagonist": "The number of times a minor antagonist chance is rolled.  for example, if the AntagChance is 33, and the MaxAntagonist value is 3, there will be on average 1 antagonist, but theoretically between 0 and 3.",
-		"ExtraAntagifNoTraitor": "If this value is 0, no effect.  If it is 1, then anytime a Traitor is NOT generated (The TraitorChance roll fails), an extra antagonist is added to the round.  Note that the extra antagonist also rolls based on the AntagChance setting.",
+		"MaxAntagonist": "The number of times a minor antagonist chance is rolled.  for example, if the AntagonistChance is 33, and the MaxAntagonist value is 3, there will be on average 1 antagonist, but theoretically between 0 and 3.",
+		"ExtraAntagifNoTraitor": "If this value is 0, no effect.  If it is 1, then anytime a Traitor is NOT generated (The TraitorChance roll fails), an extra antagonist is added to the round.  Note that the extra antagonist also rolls based on the AntagonistChance setting.",
 		"AvailableRoles": "List of active roles",
 		"CodewordChance": "[Feature in Progress]"
 	}
