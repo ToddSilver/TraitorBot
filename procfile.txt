@@ -1,1 +1,1 @@
-worker: python bot/TraitorBotmain.py
+worker: python TraitorBot/TraitorBotmain.py
