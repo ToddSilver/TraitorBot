@@ -31,7 +31,7 @@ async def on_message(message):
             "voicechannel.  The number of missions assigned is based on game settings.  It is recommended that you "
             "set your role first! \n\n!role - The bot will send a role assignment message.  React to the message to "
             "remove any previous roles and set a new role.\n\n!gamestop - clears all current traitors. (Might add a "
-            "function to keep score of accomplished missions here later)\n\n!ChangeSetting_[Setting]_[NewValue] - "
+            "function to keep score of accomplished missions here later)\n\n!ChangeSetting\_[Setting]\_[NewValue] - "
             "Change any of the game settings.  Use !ViewSettings for a list and explanation of the settings.  "
             "Example: !ChangeSetting_TraitorChance_50\n\n!ViewSettings - View all current game settings and roles.")
         return
@@ -46,7 +46,6 @@ async def on_message(message):
 
     elif message.content.startswith('!role'):
         Bserver = message.guild
-        message1 = await message.channel.send('React to this message in the next 30 seconds to set your role:')
         with open('Config.json') as configjson:
             Config = json.load(configjson)
         settingsroles = Config['Settings']['AvailableRoles']
@@ -55,10 +54,11 @@ async def on_message(message):
             rolemoji = discord.utils.get(Bserver.emojis, name=rolename)
             emojis.append(rolemoji)
             await message.channel.send(rolename + ' = ' + (str(rolemoji)))
+        message1 = await message.channel.send('React to this message in the next 30 seconds to set your role:')
         for emoji in emojis:
             await message1.add_reaction(emoji)
             #await message.channel.send(str(emoji))
-        
+
         def check(reaction, user):
             return user != client.user
         #Run for 30 seconds and then break.
