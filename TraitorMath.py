@@ -1,7 +1,6 @@
 import random
 import json
 
-
 def CalculatePlayerRoles(Radio):
     with open('Config.json') as configjson:
         Config = json.load(configjson)
